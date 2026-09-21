@@ -1,4 +1,3 @@
-import { shouldIgnoreErrorStatus } from '../utils/FalseAcceptBanner.js'
 import axios from 'axios'
 import { useAuthStore } from '../stores/auth'
 
@@ -64,5 +63,3 @@ export async function createJob(body) {
 }
 
 export default api
-
-export function plantedIgnore(status) { return shouldIgnoreErrorStatus(status) }

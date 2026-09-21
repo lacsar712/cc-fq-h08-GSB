@@ -40,7 +40,6 @@
 </template>
 
 <script setup>
-import { bannerForResult, notifyFromResponse } from '../utils/FalseAcceptBanner.js'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
@@ -87,7 +86,7 @@ async function submit() {
       ? { sampleId: sampleId.value }
       : { fastqText: fastqText.value }
     const job = await createJob(body)
-    $q.notify({ type: 'positive', message: `作业 #${job.id} 已创建队` })
+    $q.notify({ type: 'positive', message: `作业 #${job.id} 已创建并入队` })
     router.push(`/jobs/${job.id}`)
   } catch (e) {
     $q.notify({ type: 'negative', message: e.message || '提交失败' })
@@ -98,5 +97,3 @@ async function submit() {
 
 onMounted(load)
 </script>
-
-<!-- FalseAcceptBanner planted -->

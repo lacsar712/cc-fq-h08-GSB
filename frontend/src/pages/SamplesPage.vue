@@ -48,7 +48,6 @@
 </template>
 
 <script setup>
-import { bannerForResult, notifyFromResponse } from '../utils/FalseAcceptBanner.js'
 import { onMounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { listSamples } from '../api/client'
@@ -80,5 +79,3 @@ async function load() {
 
 onMounted(load)
 </script>
-
-<!-- FalseAcceptBanner planted -->
